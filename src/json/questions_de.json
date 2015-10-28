@@ -1,0 +1,26 @@
+{
+    "description": "Dies ist ein Beschreibungsstext",
+    "questions": [
+        {   "question": "Wer ist am Ältesten?",
+            "answers": [  "Mape",
+                        "Andre",
+                        "Guido",
+                        "Tido"],
+            "isCorrect": "3"
+        },
+        {   "question": "Muss man wissen!",
+            "answers": [  "Angela Merkel",
+                "Axel Stoll",
+                "Bernhard Hoëcker",
+                "Klaus Kinski"],
+            "isCorrect": "1"
+        },
+        {   "question": "Wieso steht ein Pils im Wald?",
+            "answers": [ "nur so",
+                "weil es Schal ist",
+                "Welches Pils? Habs getrunken",
+                "Weil Tannen zapfen"],
+            "isCorrect": "3"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "description": "Dies ist ein Beschreibungsstext",
+    "questions": [
+        {   "question": "Wer ist am Ältesten?",
+            "answers": [  "Mape",
+                        "Andre",
+                        "Guido",
+                        "Tido"],
+            "isCorrect": "3"
+        },
+        {   "question": "Frage 2",
+            "answers": [  "Antwort 1",
+                "Antwort 2 correct",
+                "Antwort 3",
+                "Antwort 4"],
+            "isCorrect": "1"
+        }
+    ]
+}
