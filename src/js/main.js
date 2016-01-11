@@ -57,7 +57,7 @@ function QuizHandler(language)
         quizHandler.currentQuestion     = $id;
 
         //console.log("Frage 1: " + this.questions[id].question);
-        questionElement.innerHTML = this.questions[quizHandler.currentQuestion].question;
+        questionElement.innerHTML = quizHandler.currentQuestion + 1 + "/" + quizHandler.questions.length + " " + this.questions[quizHandler.currentQuestion].question;
         TweenMax.to(questionElement, 1, {opacity: 1, scaleX: 1, scaleY: 1});
 
         //Initialisiere alle Antwortfelder
@@ -74,7 +74,6 @@ function QuizHandler(language)
     {
         //Weitere Interaktionen unterbinden
         quizHandler.disableAllButtons();
-
         evt.target.setAttribute('class', 'Answer AnswerClicked');
 
         setTimeout(function()
@@ -85,11 +84,13 @@ function QuizHandler(language)
 
     this.showSolution = function($choosedAnswer)
     {
-        if($choosedAnswer.replace("answer", "") === this.questions[quizHandler.currentQuestion].isCorrect)
+        if($choosedAnswer.replace("answer", "") === this.questions[quizHandler.currentQuestion].correctAnswer)
         {
+            this.questions[quizHandler.currentQuestion].isCorrect = true;
             document.getElementById($choosedAnswer).setAttribute('class', 'Answer AnswerCorrect');
         }else
         {
+            this.questions[quizHandler.currentQuestion].isCorrect = false;
             document.getElementById($choosedAnswer).setAttribute('class', 'Answer AnswerWrong');
         }
 
@@ -104,7 +105,7 @@ function QuizHandler(language)
             quizHandler.showQuestion(quizHandler.currentQuestion + 1);
         }else
         {
-            console.log("Das wars");
+            quizHandler.showFinalOverview();
         }
     };
 
@@ -115,6 +116,18 @@ function QuizHandler(language)
             document.getElementById("answer" + a).removeEventListener("click", quizHandler.onClickAnswer);
         }
     };
+
+    this.showFinalOverview = function()
+    {
+        //Filter the correct answered questions
+        var numOfCorrectAnsweredQuestions = this.questions.filter(function(question, index, questions)
+        {
+            return question.isCorrect === true;
+        }).length;
+
+        questionElement.innerHTML = "You answered " + numOfCorrectAnsweredQuestions + " of " + quizHandler.questions.length + " questions correct!";
+        TweenMax.to(questionElement, 1, {opacity: 1, scaleX: 1, scaleY: 1});
+    }
 }
 
 function getLanguage()

@@ -1,26 +1,26 @@
 {
-    "description": "Dies ist ein Beschreibungsstext",
+    "description": "This is the descriptiontext",
     "questions": [
-        {   "question": "Wer ist am Ältesten?",
-            "answers": [  "Mape",
-                        "Andre",
-                        "Guido",
-                        "Tido"],
-            "isCorrect": "3"
+        {   "question": "Which may be bigger?",
+            "answers": ["Elephant",
+                        "100 years old oak",
+                        "Sqirrel",
+                        "Dog"],
+            "correctAnswer": "1"
         },
-        {   "question": "Muss man wissen!",
+        {   "question": "The current german chancellor",
             "answers": [  "Angela Merkel",
                 "Axel Stoll",
                 "Bernhard Hoëcker",
                 "Klaus Kinski"],
-            "isCorrect": "1"
+            "correctAnswer": "0"
         },
-        {   "question": "Wieso steht ein Pils im Wald?",
-            "answers": [ "nur so",
-                "weil es Schal ist",
-                "Welches Pils? Habs getrunken",
-                "Weil Tannen zapfen"],
-            "isCorrect": "3"
+        {   "question": "The country with the biggest population?",
+            "answers": [ "Brasilia",
+                "Germany",
+                "USA",
+                "China"],
+            "correctAnswer": "3"
         }
     ]
 }
